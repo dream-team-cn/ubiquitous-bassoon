@@ -1,6 +1,5 @@
 const { Sequelize, DataTypes } = require("sequelize"); 
-require('dotenv').config(); 
-const sequelize = new Sequelize(`mysql://root:${process.env.PASSWORD}@localhost:3306/master24`)
+const sequelize = new Sequelize(process.env.DBSTRING)
 const Location = sequelize.define("location", {
     name: {
         type: DataTypes.STRING, 
