@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/dream-team-cn/ubiquitous-bassoon/issues"
   },
-  "homepage": "https://github.com/dream-team-cn/ubiquitous-bassoon#readme"
+  "homepage": "https://github.com/dream-team-cn/ubiquitous-bassoon#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
