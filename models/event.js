@@ -1,5 +1,6 @@
 const { Sequelize, DataTypes, Op } = require("sequelize"); 
-const sequelize = new Sequelize("mysql://root:PASSWORD@localhost:3306/master24");
+require('dotenv').config(); 
+const sequelize = new Sequelize(`mysql://root:${process.env.PASSWORD}@localhost:3306/master24`)
 
 const Event = sequelize.define("event", {
     date: {
