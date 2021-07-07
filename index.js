@@ -6,6 +6,8 @@ const express = require("express");
 const app = express(); 
 const locationRouter = require("./routes/locations");
 const eventRouter = require("./routes/events");
+const errorRoutrer = require("./routes/error");
+// const cors = require("cors"); 
 
 const server = app.listen(5000, async() => {
     await sequelize.authenticate();
@@ -27,3 +29,4 @@ process.on('SIGINT', shutdown);
 app.use(express.json()); 
 app.use("/locations", locationRouter); 
 app.use("/events", eventRouter);
+app.use("*", errorRoutrer); 
