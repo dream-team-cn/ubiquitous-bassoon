@@ -1,4 +1,47 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bowlby+One+SC&family=Gloria+Hallelujah&family=Otomanopee+One&family=Permanent+Marker&family=Poiret+One&family=Shrikhand&family=Unica+One&display=swap');
+/* font-family: 'Bangers', cursive;
+font-family: 'Bowlby One SC', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Otomanopee One', sans-serif;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Poiret One', cursive;
+font-family: 'Shrikhand', cursive;
+font-family: 'Unica One', cursive; */
+
+
+
+h1 {
+  text-align: center;
+}
+
+.header {
+  font-family: 'Gloria Hallelujah', cursive;
+  /* font-family: 'Shrikhand', cursive; */
+  /* font-family: 'Bowlby One SC', cursive; */
+  font-weight: bolder;
+  text-align: center;
+  text-shadow: 1px 1px 2px dimgrey;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+  padding: 14px 16px;
+  
+}
+
+.navigation {
+  font-family: 'Permanent Marker', cursive;
+  text-align: left;
+  padding-top: 2%;
+  font-size: 25px;
+  width: 50%;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -11,9 +54,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,9 +65,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
-.App-link {
+/* .App-link {
   color: #61dafb;
 }
 
@@ -35,4 +78,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
