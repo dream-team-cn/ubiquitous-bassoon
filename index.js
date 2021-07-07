@@ -1,15 +1,22 @@
 const { Sequelize, DataTypes, Op } = require("sequelize"); 
 require('dotenv').config(); 
-const sequelize = new Sequelize(process.env.DBSTRING);
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialectOptions: {
+        ssl: {
+            rejectUnauthorized: false
+        }
+    }
+});
 
 const express = require("express"); 
 const app = express(); 
 const locationRouter = require("./routes/locations");
 const eventRouter = require("./routes/events");
 const errorRoutrer = require("./routes/error");
+const logRouter = require("./routes/log");
 // const cors = require("cors"); 
 
-const server = app.listen(5000, async() => {
+const server = app.listen(process.env.PORT || 5000, async() => {
     await sequelize.authenticate();
     await sequelize.sync(); 
 });
@@ -30,3 +37,4 @@ app.use(express.json());
 app.use("/locations", locationRouter); 
 app.use("/events", eventRouter);
 app.use("*", errorRoutrer); 
+app.use("/log", logRouter);

@@ -1,5 +1,11 @@
 const { Sequelize, DataTypes, Op } = require("sequelize"); 
-const sequelize = new Sequelize(process.env.DBSTRING);
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialectOptions: {
+        ssl: {
+            rejectUnauthorized: false
+        }
+    }
+});
 
 const Event = sequelize.define("event", {
     date: {
@@ -10,7 +16,7 @@ const Event = sequelize.define("event", {
         type: DataTypes.STRING, 
         allowNull: false
     },
-    location_id: {
+    locationid: {
         type: DataTypes.INTEGER,
         references: {
             model: "locations",
