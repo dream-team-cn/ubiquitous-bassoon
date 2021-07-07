@@ -19,10 +19,14 @@ const logRouter = require("./routes/log");
 // const cors = require("cors"); 
 
 const server = app.listen(process.env.PORT || 5000, async() => {
-    await sequelize.authenticate();
-    await Location.sync(); 
-    await Event.sync();     
-    run()
+    try { 
+        await sequelize.authenticate();
+        await Location.sync(); 
+        await Event.sync();     
+        run()
+    } catch (err) {
+        console.log(err); 
+    }
 });
 
 const shutdown = () => {
