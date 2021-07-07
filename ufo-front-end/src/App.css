@@ -46,6 +46,17 @@ li {
   padding-left: 5%;
 }
 
+.navigation a {
+  text-decoration: none;
+  padding: 1%;
+}
+
+.navigation a:hover {
+  color:greenyellow;
+  transition-duration: 2s;
+
+}
+
 .logo {
   width: 10%;
   height: 10%;

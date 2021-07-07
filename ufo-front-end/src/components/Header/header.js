@@ -1,12 +1,10 @@
 const Header = () => {
     return (
         <div className={"navigation"}>
-        <ul>
-            <li>Home</li>
-            <li>Events</li>
-            <li>Locations</li>
-            <li>Log Activity</li>
-            </ul>
+            <a href=" /">Home</a>
+            <a href="/events">Events</a>
+            <a href="/locations">Locations</a>
+            <a href="/logactivity">Log Activity</a>
         </div>
     )
 }
