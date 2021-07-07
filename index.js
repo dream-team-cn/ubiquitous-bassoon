@@ -12,10 +12,10 @@ const express = require("express");
 const Location = require("./models/location");
 const Event = require("./models/event");
 const app = express(); 
-// const locationRouter = require("./routes/locations");
-// const eventRouter = require("./routes/events");
-// const errorRoutrer = require("./routes/error");
-// const logRouter = require("./routes/log");
+const locationRouter = require("./routes/locations");
+const eventRouter = require("./routes/events");
+const errorRoutrer = require("./routes/error");
+const logRouter = require("./routes/log");
 // const cors = require("cors"); 
 
 const server = app.listen(process.env.PORT || 5000, async() => {
@@ -47,7 +47,7 @@ process.on('SIGTERM', shutdown);
 process.on('SIGINT', shutdown); 
 
 app.use(express.json()); 
-// app.use("/locations", locationRouter); 
-// app.use("/events", eventRouter);
-// app.use("*", errorRoutrer); 
-// app.use("/log", logRouter);
+app.use("/locations", locationRouter); 
+app.use("/events", eventRouter);
+app.use("*", errorRoutrer); 
+app.use("/log", logRouter);
