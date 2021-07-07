@@ -33,9 +33,11 @@ const shutdown = () => {
 };
 
 const run = async () => {
+    console.log("run is running");
     try {
         const preston = await Location.create({name: "Preston", region: "North West"}); 
         const event = await Event.create({date: 09-01-01, object: "bright white flashing lights", locationid: preston.id})
+    
     } catch (err) {
         console.log(err);
     }
