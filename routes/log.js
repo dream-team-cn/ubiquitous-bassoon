@@ -7,7 +7,12 @@ router.post("/", async (req,res) => {
         const event = await Event.create({
             date: req.body.date,
             object: req.body.object,
-            locationid:
-        })
+            locationid: req.body.locationid
+        }, {})
+        res.status(201).send("New event logged. Thanks for your spooky findings.");
+    } catch (err) {
+        res.status(400).send(`Error: ${err}`);
     }
-})
+});
+
+module.exports = router; 

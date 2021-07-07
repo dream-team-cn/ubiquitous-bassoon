@@ -1,5 +1,11 @@
 const { Sequelize, DataTypes, Op } = require("sequelize"); 
-const sequelize = new Sequelize(process.env.DBSTRING);
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialectOptions: {
+        ssl: {
+            rejectUnauthorized: false
+        }
+    }
+});
 
 const Event = sequelize.define("event", {
     date: {
