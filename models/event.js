@@ -10,7 +10,7 @@ const Event = sequelize.define("event", {
         type: DataTypes.STRING, 
         allowNull: false
     },
-    location_id: {
+    locationid: {
         type: DataTypes.INTEGER,
         references: {
             model: "locations",
