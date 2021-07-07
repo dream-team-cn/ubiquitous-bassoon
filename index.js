@@ -20,7 +20,9 @@ const logRouter = require("./routes/log");
 
 const server = app.listen(process.env.PORT || 5000, async() => {
     await sequelize.authenticate();
-    await sequelize.sync(); 
+    await Location.sync(); 
+    await Event.sync();     
+    run()
 });
 
 const shutdown = () => {
@@ -36,14 +38,12 @@ const run = async () => {
     console.log("run is running");
     try {
         const preston = await Location.create({name: "Preston", region: "North West"}); 
-        const event = await Event.create({date: 09-01-01, object: "bright white flashing lights", locationid: preston.id})
+        await Event.create({date: new Date("2009-01-01"), object: "bright white flashing lights", locationid: preston.id})
     
     } catch (err) {
         console.log(err);
     }
 }
-
-run();
 
 process.on('SIGTERM', shutdown); 
 process.on('SIGINT', shutdown); 
