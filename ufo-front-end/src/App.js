@@ -4,14 +4,16 @@ import Body from "./components/Body/body";
 import Events from "./Pages/Events/";
 import Locations from "./Pages/Locations/";
 import img from "./img/whiteLogoAndTagline.png";
+import {getUser} from "./Utils/user"
+import {useState,useEffect} from "react"
 
 function App() {
 
   const [user, setUser] = useState();
 
-  UseEffect(()=>{
-    setUser(getuser());
-  }),[user])
+  useEffect(()=>{
+    setUser(getUser());
+  },[user])
 
   return (
     <div>
