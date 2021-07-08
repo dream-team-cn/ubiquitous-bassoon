@@ -1,13 +1,7 @@
 const { Sequelize, DataTypes, Op } = require("sequelize"); 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
-    dialectOptions: {
-        ssl: {
-            rejectUnauthorized: false
-        }
-    }
-});
+const connection = require("../db/connectionsql")
 
-const Event = sequelize.define("event", {
+const Event = connection.define("event", {
     date: {
         type: DataTypes.DATEONLY,
         allowNull: false

@@ -1,12 +1,7 @@
 const { Sequelize, DataTypes } = require("sequelize"); 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
-    dialectOptions: {
-        ssl: {
-            rejectUnauthorized: false
-        }
-    }
-});
-const Location = sequelize.define("location", {
+const connection = require("../db/connectionsql")
+
+const Location = connection.define("location", {
     name: {
         type: DataTypes.STRING, 
         allowNul: false
