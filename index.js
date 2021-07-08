@@ -11,7 +11,6 @@ const app = express();
 const userRouter = require("./routes/user");
 const locationRouter = require("./routes/locations");
 const eventRouter = require("./routes/events");
-const errorRouter = require("./routes/error");
 const logRouter = require("./routes/log");
 const jwt = require('jsonwebtoken');
 // const cors = require("cors"); 
@@ -47,9 +46,18 @@ const run = async () => {
 process.on('SIGTERM', shutdown); 
 process.on('SIGINT', shutdown); 
 
+
+
 app.use(express.json()); 
+
+if (process.env.NODE_ENV === "production") {
+ app.use(express.static("ufo-front-end/build"))
+ app.get("*", (req,res) => {
+     res.sendFile(path.resolve(__dirname,"ufo-front-end", "build", "index.html"));
+  })
+};
+
 app.use("/locations", locationRouter); 
 app.use("/events", eventRouter);
 app.use("/log", logRouter);
 app.use("/user", userRouter);
-app.use("*", errorRouter); 
