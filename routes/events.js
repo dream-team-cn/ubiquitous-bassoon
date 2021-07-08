@@ -9,18 +9,27 @@ router.get("/", async(req, res) => {
     res.status(200).json(events); 
 });
 
-// router.post("/location", async(req, res) => {
-//     try {
-//         const locationSearch = await Location.findAll({
-//             where: {
-//                 name: {
-//                     [Op.eq]: req.body.name
-//                 }
-//             }
-//         })
-//         const eventSearch = await Event 
-//     }
-// })
+router.post("/location", async(req, res) => {
+    try {
+        const locationSearch = await Location.findOne({
+            where: {
+                name: {
+                    [Op.eq]: req.body.name
+                }
+            }
+        })
+        const eventSearch = await Event.findAll({
+            where: {
+                locationid: {
+                    [Op.eq]: locationSearch.id
+                }
+            }
+        }) 
+        res.status(200).json(eventSearch); 
+    } catch(err) {
+        console.log(`Error: ${err}`); 
+    }
+})
 
 router.post("/dates", async(req, res) => {
     try {
