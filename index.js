@@ -17,9 +17,11 @@ const jwt = require('jsonwebtoken');
 // const cors = require("cors"); 
 
 const server = app.listen(process.env.PORT || 5000, async() => {
+
     await connection.authenticate();
     await connection.sync(); 
     // run();
+
 });
 
 const shutdown = () => {
@@ -33,6 +35,7 @@ const shutdown = () => {
 
 const run = async () => {    
     try {
+
         // const preston = await Location.create({name: "Preston", region: "North West"}); 
         // await Event.create({date:new Date("2009-01-01"), object: "bright white flashing lights", locationid: preston.id})
         // await User.create({name:"Lance", email:"Lbookatz@hotmai.com", password:"password", token:jwt.sign({name:"Lance"}, process.env.SECRET)})
@@ -40,7 +43,6 @@ const run = async () => {
         console.log(err);
     }
 }
-
 
 process.on('SIGTERM', shutdown); 
 process.on('SIGINT', shutdown); 
