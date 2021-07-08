@@ -4,7 +4,6 @@ const User = require("../models/user");
 const {auth} = require("../middleware");
 const jwt = require('jsonwebtoken');
 
-
 // const {auth} = require("../middeware");
 
 userRouter.post("/", async (req, res) => {
