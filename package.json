@@ -3,9 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines":{
+    "node":"14.16.1",
+    "npm":"6.14.12"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "server": "nodemon index.js",
+    "start":"node index.js",
+    "client":"npm start --prefix ufo-front-end",
+    "bootstrap":"npm install -d && cd ufo-front-end && npm install -d",
+    "dev":"concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild":"npm install --prefix ufo-front-end && npm run build --prefix ufo-front-end"
+
   },
   "repository": {
     "type": "git",
@@ -29,6 +39,7 @@
     "sequelize": "^6.6.4"
   },
   "devDependencies": {
+    "concurrently": "^6.2.0",
     "nodemon": "^2.0.9"
   }
 }
