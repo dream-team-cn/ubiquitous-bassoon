@@ -3,17 +3,30 @@ require('dotenv').config();
 const connection = require("./db/connectionsql")
 
 const express = require("express"); 
+const app = express(); 
+const cors = require("cors")
 
 const User = require("./models/user");
 const Location = require("./models/location");
 const Event = require("./models/event");
-const app = express(); 
+
 const userRouter = require("./routes/user");
 const locationRouter = require("./routes/locations");
 const eventRouter = require("./routes/events");
 const logRouter = require("./routes/log");
 const jwt = require('jsonwebtoken');
-// const cors = require("cors"); 
+
+
+
+// app.use(cors({
+//   origin:"*",
+// }))
+app.use(cors())
+
+// app.get("/events", (req,res) => {
+//     console.log("functiontwice")
+//     res.json({name:"LAnce", other:"aqu"})
+// });
 
 const server = app.listen(process.env.PORT || 5000, async() => {
 
