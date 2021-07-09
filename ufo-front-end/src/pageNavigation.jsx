@@ -1,4 +1,5 @@
 import { useState } from "react"; 
+import Location from "./components/Location/index"
 import "./App.css";
 
 const Navigation = () => {
@@ -14,7 +15,7 @@ const Navigation = () => {
     )
     const renderLocations = () => (
         <div>
-            <h1>Here are the locations (or probs not because it's broke, ha)</h1>
+            <Location />
         </div>
     )
     const renderLog = () => (
