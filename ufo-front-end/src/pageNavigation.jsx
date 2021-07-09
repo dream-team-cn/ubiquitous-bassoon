@@ -1,6 +1,7 @@
 import { useState } from "react"; 
 import Location from "./components/Location/index"
 import "./App.css";
+import Events from "./Pages/Events/index"
 
 const Navigation = () => {
     const pageEvents = "events";
@@ -10,7 +11,8 @@ const Navigation = () => {
     const [page, setPage] = useState([pageEvents])
     const renderEvents = () => (
         <div>
-            <h1>Here are all the events from the back end that doesn't work yet... lol.</h1>
+            {/* <h1>Here are all the events from the back end that doesn't work yet... lol.</h1> */}
+            <Events />
         </div>
     )
     const renderLocations = () => (
