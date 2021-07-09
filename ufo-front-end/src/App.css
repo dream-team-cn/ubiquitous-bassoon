@@ -66,14 +66,36 @@ li {
 
 button {
   padding: 10px; 
-  background-color: #00FF00;
+  text-shadow: 2px 2px #000000;
   font-size: 2em;
   font-family: 'Permanent Marker', cursive;
   transform: skew(-15deg);
   box-shadow: 5px 5px 0px #FFFFFF;
 }
-button:hover {
-  box-shadow: 10px 10px 0px #ff00cc
+.button1 {
+  background-color: #00FF00;
+}
+.button2 {
+  background-color: #FF00cc;
+}
+.button3 {
+  background-color: #ff9900;
+}
+.button4 {
+  background-color: #ffff00;
+}
+
+.button1:hover {
+  box-shadow: 10px 10px 0px #ff00cc;
+}
+.button2:hover {
+  box-shadow: 10px 10px 0px #FFFF00;
+}
+.button3:hover {
+  box-shadow: 10px 10px 0px #00ff00;
+}
+.button4:hover {
+  box-shadow: 10px 10px 0px #ff9900;
 }
 
 /* 
