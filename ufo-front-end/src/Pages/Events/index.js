@@ -8,13 +8,23 @@ const Events = () => {
         const data = await hope.json()
         seteventjson(data);
 };
+    useEffect(() => {
+        getEvents(); 
+        }, []);
+
     return (
         <div>
-            {eventjson.map(event => 
-            <div key={event.id}>{event.date}</div>)}
+            {eventjson.map(eventjson => 
+            <div>{eventjson.id},{eventjson.date}</div>)}
         </div>
+       
     )
   };
+
+//   <div>
+//   <h1>Here are the locations we have!</h1>
+//   <p>{locationjson.map(locationjson => <div>{locationjson.name}, {locationjson.region}</div>)}</p>
+// </div>
 
 export default Events
 
