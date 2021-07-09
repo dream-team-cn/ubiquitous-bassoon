@@ -2,12 +2,13 @@ import { useState } from "react";
 import Location from "./components/Location/index"
 import "./App.css";
 import Events from "./Pages/Events/index"
+import LocationSearch from "./components/Specific-Event";
 
 const Navigation = () => {
     const pageEvents = "events";
     const pageLocations = "locations"; 
     const pageHome = "home";
-    const pageLog = "log activity"
+    const pageSearch = "search"
     const [page, setPage] = useState([pageEvents])
     const renderEvents = () => (
         <div>
@@ -20,9 +21,9 @@ const Navigation = () => {
             <Location />
         </div>
     )
-    const renderLog = () => (
+    const renderSearch = () => (
         <div> 
-            <h1>Tell us about your spooky event!</h1>
+            <LocationSearch />
         </div>
     )
     const renderHome = () => (
@@ -40,12 +41,12 @@ const Navigation = () => {
                 <button className="button1" onClick={() => navigateTo(pageHome)}>Home</button>
                 <button className="button2" onClick={() => navigateTo(pageEvents)}>Events</button>
                 <button className="button3" onClick={() => navigateTo(pageLocations)}>Locations</button>
-                <button className="button4" onClick={() => navigateTo(pageLog)}>Log Activity</button>
+                <button className="button4" onClick={() => navigateTo(pageSearch)}>Search</button>
             </header>
             {page === pageHome && renderHome()}
             {page === pageEvents && renderEvents()}
             {page === pageLocations && renderLocations()}
-            {page === pageLog && renderLog()}
+            {page === pageSearch && renderSearch()}
         </div>
     )
 }
