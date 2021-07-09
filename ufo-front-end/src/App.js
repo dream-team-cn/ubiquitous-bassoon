@@ -21,7 +21,7 @@ function App() {
   const getEvents = async () => {    
     const hope = await fetch("http://localhost:5000/events/");
     const data = await hope.json()
-    seteventjson(hope);
+    seteventjson(data);
     
   };
  
@@ -54,12 +54,14 @@ function App() {
   // const onChange = (e) => {setNumberOfCats(e.target.value);};
 
   const showjson = (e) => {
-    alert(JSON.stringify(eventjson));
+    alert(JSON.stringify(eventjson));    
+    alert(eventjson.locationid);
   };
 
   return (
     <div>
-      <input type="text" value={eventjson.message}  />
+       
+      {/* <input type="text" value={eventjson.message}  /> */}
       <button onClick={showjson}>show alert with json</button>
       <div>{user ? <home /> : <login />}</div>
 
