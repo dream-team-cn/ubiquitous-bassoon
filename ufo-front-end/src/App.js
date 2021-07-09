@@ -3,6 +3,7 @@ import Header from "./components/Header/header";
 import Body from "./components/Body/body";
 import Events from "./Pages/Events/";
 import Locations from "./Pages/Locations/";
+import Navigation from "./pageNavigation";
 import img from "./img/whiteLogoAndTagline.png";
 import {getUser} from "./Utils/user"
 import {useState,useEffect} from "react"
@@ -25,6 +26,7 @@ function App() {
         <Body />
         <Events />
         <Locations />
+        <Navigation />
       </div>
     </div>
   );
