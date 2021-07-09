@@ -64,7 +64,17 @@ li {
   padding-left: 2%;
 }
 
-
+button {
+  padding: 10px; 
+  background-color: #00FF00;
+  font-size: 2em;
+  font-family: 'Permanent Marker', cursive;
+  transform: skew(-15deg);
+  box-shadow: 5px 5px 0px #FFFFFF;
+}
+button:hover {
+  box-shadow: 10px 10px 0px #ff00cc
+}
 
 /* 
 .App-logo {
