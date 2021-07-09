@@ -5,8 +5,10 @@ const router = express.Router();
 const { Op } = require("sequelize");
 
 router.get("/", async(req, res) => {
-    const events = await Event.findAll(); 
-    res.status(200).json(events); 
+    console.log("fromevents file")
+    // const events = await Event.findAll(); 
+    // res.status(200).send(events); 
+    res.status(201).send({ message: "I have reached the backend "})
 });
 
 router.post("/location", async(req, res) => {
@@ -14,7 +16,7 @@ router.post("/location", async(req, res) => {
         const locationSearch = await Location.findOne({
             where: {
                 name: {
-                    [Op.eq]: req.body.name
+                    [Op.eq]: req.body.name 
                 }
             }
         })

@@ -23,10 +23,10 @@ const jwt = require('jsonwebtoken');
 // }))
 app.use(cors())
 
-app.get("/events", (req,res) => {
-    console.log("functiontwice")
-    res.json({name:"LAnce", other:"aqu"})
-});
+// app.get("/events", (req,res) => {
+//     console.log("functiontwice")
+//     res.json({name:"LAnce", other:"aqu"})
+// });
 
 const server = app.listen(process.env.PORT || 5000, async() => {
 
@@ -71,6 +71,6 @@ if (process.env.NODE_ENV === "production") {
 };
 
 app.use("/locations", locationRouter); 
-// app.use("/events", eventRouter);
+app.use("/events", eventRouter);
 app.use("/log", logRouter);
 app.use("/user", userRouter);

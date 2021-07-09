@@ -6,28 +6,36 @@ import Locations from "./Pages/Locations/";
 import img from "./img/whiteLogoAndTagline.png";
 import { getUser } from "./Utils/user";
 import { useState, useEffect } from "react";
-// import cors from "cors"
-// import express from "express"
-// import app from "express"
-
 
 function App() {
-  // console.log("twicw")
   const [user, setUser] = useState();
-
+  // for users 
   // useEffect(() => {
   //   setUser(getUser());
   // }, [user]);
-  
-  const [eventjson, seteventjson] = useState({});
-  
-  const getEvents = async () => {
-    console.log("test before const");
 
-      const hope = () => {seteventjson(fetch("http://localhost:5000/events"))}
-    // const hope = await fetch("http://localhost:5000/events");
-    console.log("test after const");
-    console.log(hope);
+  // this is the bit that gets the data from backend
+  const [eventjson, seteventjson] = useState();
+
+  const getEvents = async () => {    
+    const hope = await fetch("http://localhost:5000/events/");
+    const data = await hope.json()
+    seteventjson(hope);
+    
+  };
+ 
+  useEffect(() => {
+    getEvents(); 
+  }, []);
+
+  // seteventjson(fetch("http://localhost:5000/events/"))
+
+  // let hope = fetch("http://localhost:5000/events/")
+
+  // const hope = async () => { seteventjson(await fetch("http://localhost:5000/events"))}
+  // const hope = await fetch("http://localhost:5000/events");
+
+  // console.log(hope);
   //     method: "GET"
   //   });
   //     console.log("why")
@@ -41,13 +49,18 @@ function App() {
   //   //     cat["price"] = faker.commerce.price(50, 100);
   //   //   }
   //   //   setCats(data);
-  };
 
-  getEvents();
+  // const onChange = (e) => {setNumberOfCats(e.target.value);};
+
+  const showjson = (e) => {
+    alert(JSON.stringify(eventjson));
+  };
 
   return (
     <div>
-      {/* <div>{user ? <home /> : <login />}</div> */}
+      <input type="text" value={eventjson.message}  />
+      <button onClick={showjson}>show alert with json</button>
+      <div>{user ? <home /> : <login />}</div>
 
       <div>
         <img className={"logo"} src={img} alt="website logo" />
