@@ -6,9 +6,9 @@ const { Op } = require("sequelize");
 
 router.get("/", async(req, res) => {
     console.log("fromevents file")
-    // const events = await Event.findAll(); 
-    // res.status(200).send(events); 
-    res.status(201).send({ message: "I have reached the backend "})
+    const events = await Event.findAll(); 
+    res.status(200).send(events); 
+    // res.status(201).send({ message: "I have reached the backend "})
 });
 
 router.post("/location", async(req, res) => {

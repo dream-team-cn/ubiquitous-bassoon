@@ -4,6 +4,7 @@ const connection = require("./db/connectionsql")
 
 const express = require("express"); 
 const app = express(); 
+//added to help fetch
 const cors = require("cors")
 
 const User = require("./models/user");
@@ -15,8 +16,6 @@ const locationRouter = require("./routes/locations");
 const eventRouter = require("./routes/events");
 const logRouter = require("./routes/log");
 const jwt = require('jsonwebtoken');
-
-
 
 // app.use(cors({
 //   origin:"*",
