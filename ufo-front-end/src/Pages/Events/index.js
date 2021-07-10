@@ -14,10 +14,10 @@ const Events = () => {
 
     return (
         <div>
+            <h1>Here are all the events we've got logged!</h1>
             {eventjson.map(eventjson => 
-            <div>{eventjson.id},{eventjson.date}</div>)}
+            <div>Object: {eventjson.object}, Date: {eventjson.date}</div>)}
         </div>
-       
     )
   };
 

@@ -62,14 +62,13 @@ function App() {
     <div>
        
       {/* <input type="text" value={eventjson.message}  /> */}
-      <button onClick={showjson}>show alert with json</button>
+      {/* <button onClick={showjson}>show alert with json</button> */}
       <div>{user ? <home /> : <login />}</div>
 
       <div>
         <img className={"logo"} src={img} alt="website logo" />
         <Header />
         <Body />
-        <Events />
         <Locations />
         <Navigation />
       </div>

@@ -27,7 +27,7 @@ router.post("/location", async(req, res) => {
                 }
             }
         }) 
-        res.status(200).json(eventSearch); 
+        res.status(200).send(eventSearch); 
     } catch(err) {
         res.status(500).json(err); 
     }
