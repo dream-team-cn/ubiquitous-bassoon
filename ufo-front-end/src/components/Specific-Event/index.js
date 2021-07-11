@@ -1,6 +1,4 @@
-/* form with on submit function 
-
-*/
+/* form with on submit function */
 
 import { useState, useEffect } from "react"; 
 

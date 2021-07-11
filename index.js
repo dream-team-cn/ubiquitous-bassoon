@@ -15,6 +15,7 @@ const userRouter = require("./routes/user");
 const locationRouter = require("./routes/locations");
 const eventRouter = require("./routes/events");
 const logRouter = require("./routes/log");
+const loginRouter = require("./routes/login");
 const jwt = require('jsonwebtoken');
 
 // app.use(cors({
@@ -73,3 +74,4 @@ app.use("/locations", locationRouter);
 app.use("/events", eventRouter);
 app.use("/log", logRouter);
 app.use("/user", userRouter);
+app.use("/login", loginRouter)
